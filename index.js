@@ -1,4 +1,6 @@
 const prompt = require('./lib/prompt');
+const fs = require('fs');
+const { Triangle, Square, Circle } = require('./lib/shapes');
 
 // Questions to ask user
 const questions = [
@@ -34,7 +36,23 @@ const questions = [
 // Function to be called on program start
 const init = () => {
 	prompt(questions, (answers) => {
-		console.log(answers);
+		const { text, textColor, shape, shapeColor } = answers;
+		let shapeObj = null;
+		switch (shape) {
+			case 'Triangle':
+				shapeObj = new Triangle();
+				break;
+			case 'Square':
+				shapeObj = new Square();
+				break;
+			case 'Circle':
+				shapeObj = new Circle();
+				break;
+		}
+		shapeObj.setText(text).setShapeColor(shapeColor).setTextColor(textColor);
+		fs.writeFile('./logo.svg', shapeObj.render(), () => {
+			console.log('Created logo.svg');
+		});
 	});
 };
 
