@@ -31,7 +31,7 @@ const questions = [
 		type: 'input',
 		name: 'shapeColor',
 		message: 'What color would you like the shape to be?',
-		default: '#a33',
+		default: '#3aa',
 	},
 ];
 
