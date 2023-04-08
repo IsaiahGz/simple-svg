@@ -51,7 +51,7 @@ const init = () => {
 		}
 		shapeObj.setText(text).setShapeColor(shapeColor).setTextColor(textColor);
 		fs.writeFile('./logo.svg', shapeObj.render(), () => {
-			console.log('Created logo.svg');
+			console.log('Generated logo.svg');
 		});
 	});
 };
