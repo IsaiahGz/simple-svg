@@ -19,6 +19,7 @@ const questions = [
 		type: 'input',
 		name: 'textColor',
 		message: 'What color would you like the text to be?',
+		default: 'white',
 	},
 	{
 		type: 'list',
@@ -30,6 +31,7 @@ const questions = [
 		type: 'input',
 		name: 'shapeColor',
 		message: 'What color would you like the shape to be?',
+		default: '#a33',
 	},
 ];
 
